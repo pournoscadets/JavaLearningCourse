@@ -289,29 +289,128 @@ TreeSet il est impossible d'ajouter un élément null
 -->
 
 ---
+layout: center
+class: text-center
+---
+
+# Notion d'Héritage
+
+<div text-center text-3xl>
+Le deuxième grand principe de la programmation objet après l’encapsulation est le concept d’héritage.
+Une classe B qui hérite d’une classe A hérite des attributs et des méthodes de la classe A sans avoir à les redéfinir
+</div>
+
+---
 layout: two-cols
 layoutClass: gap-16
 ---
 
 # Notion d'Héritage
 
-<<< @/snippets/ClassMere.java#snippet
+```java {all|5|7|7-8|10|all}  
+public class ClassMere {
 
+    private String nom;
+  
+
+    public ClassMere(String nom) {
+        this.nom = nom;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+}
+
+```
 ::right::
-<<< @/snippets/ClassFille.java#snippet
+<br>
+<br>
+
+```java {all|5|7|7-8|10|all}  
+public class ClassFille extends ClassMere {
+    private String ecole;
+
+    public ClassFille(String nom,String ecole) {
+        super(nom);
+        this.ecole = ecole;
+    }
+
+    public String getEcole() {
+        return ecole;
+    }
+
+    public void setEcole(String ecole) {
+        this.ecole = ecole;
+    }
+
+}
+
+```
 
 ---
-layout: two-cols
-layoutClass: gap-16
+layout: center
+class: text-center
+---
+
+# Notion d'Héritage
+
+<div > 
+Cette annotation est un marqueur utilisé par le compilateur pour vérifier la réécriture de méthodes héritées.
+s'utilise pour annoter une méthode qui est une réécriture d'une méthode héritée. Le compilateur lève une erreur si aucune méthode héritée ne correspond.
+</div>
+
+
+---
+layout: center
+class: text-center
 ---
 
 # Interface
+<div>
+
+Une interface est un ensemble de constantes et de déclarations de méthodes correspondant un peu à une classe abstraite. C'est une sorte de standard auquel une classe peut répondre. Tous les objets qui se conforment à cette interface (qui implémentent cette interface) possèdent les méthodes et les constantes déclarées dans celle-ci. Plusieurs interfaces peuvent être implémentées dans une même classe.
+</div>
+::right::
+
 <<< @/snippets/classe.java#snippet
 
+<<< @/snippets/classe.java#snippet
+
+---
+layout: two-cols
+class: text-center
+---
+
+# Interface
+<div>
+
+Une interface est un ensemble de constantes et de déclarations de méthodes correspondant un peu à une classe abstraite. C'est une sorte de standard auquel une classe peut répondre. Tous les objets qui se conforment à cette interface (qui implémentent cette interface) possèdent les méthodes et les constantes déclarées dans celle-ci. Plusieurs interfaces peuvent être implémentées dans une même classe.
+</div>
+::right::
+
+<<< @/snippets/classe.java#snippet
+
+<<< @/snippets/classe.java#snippet
+
+
+
+---
+layout: center
+class: text-center
+---
 
 # Notion d'implémentation
 <<< @/snippets/classe.java#snippet
 
+---
+layout: center
+class: text-center
+---
 
 # Enumération
 <<< @/snippets/classe.java#snippet
