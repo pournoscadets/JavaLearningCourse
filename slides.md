@@ -232,23 +232,25 @@ Les fonctionnalités de base de ce type de collection sont définies dans l'inte
 ::right::
 <br>
 <br>
-<br> 
 
 <div v-click>
 <h4> Les collections de type Set </h4>
 
+<br> 
+<div id="setdesc">
 Une collection de type Set est un ensemble, qui ne permet pas l'ajout de doublons ni l'accès direct à un élément de la collection.<br>
 Les fonctionnalités de base de ce type de collection sont définies dans l'interface <b>java.util.Set</b>.
+</div>
 </div>
 
 <br>
 
 <div v-click>
 
-```java {all|5|7|7-8|10|all}  
-  Set<String> monEnsemble = new HashSet<>();
-  Set<Integer> monEnsemble = new LinkedHashSet<>();
-  Set<Integer> monEnsembleOrdonne = new TreeSet<>();
+```java {all|5|7|7-8|10|all}    
+  Set<String> monEnsemble = new HashSet<>(); (Ne garantit pas l ordre de parcours)
+  Set<Integer> monEnsemble = new LinkedHashSet<>(); (Garantit l ordre de parcours selon celui de l insertion)
+  Set<Integer> monEnsembleOrdonne = new TreeSet<>(); (Trie selon un comparateur)
 ```
 
 <br>
@@ -256,10 +258,19 @@ Les fonctionnalités de base de ce type de collection sont définies dans l'inte
 
 <div v-click>
 
-<ListComplexity />
+<SetComplexity />
 
 </div>
 
+<style>
+div{
+  font-size: 15px;
+}
+
+#setdesc{
+  font-size: 14px;
+}
+</style>
 
 <!-- ArrayList elle utilise un tableau dont la taille s'adapte automatiquement au nombre d'éléments de la collection. Cette adaptation a cependant un coût car elle nécessite l'instanciation d'un nouveau tableau et la copie des éléments dans ce nouveau tableau. -->
 
@@ -288,6 +299,176 @@ TreeSet il est impossible d'ajouter un élément null
 
 -->
 
+---
+layout: two-cols
+layoutClass: gap-16
+---
+
+# Types (Collections)
+
+<br>
+
+<h4> Les collections de type Map </h4>
+
+Les collections de type Map sont définies et implémentées comme des dictionnaires sous la forme d'associations depaires de type clés/valeurs. La clé doit être unique. En revanche, la même valeur peut être associée à plusieurs clés différentes.<br>
+Les fonctionnalités de base de ce type de collection sont définies dans l'interface <b>java.util.Map</b>.
+<br>
+
+::right::
+<br>
+<br>
+<br> 
+
+<div v-click>
+
+```java {all|5|7|7-8|10|all}  
+  Map<String> maMap = new HashMap<>(); (Ne garantit pas l ordre de parcours)
+  Map<Integer> maMap = new LinkedHashMap<>(); (Garantit l ordre de parcours)
+  Set<Integer> maMapOrdonne = new TreeMap<>(); (Trie selon un comparateur)
+```
+
+<br>
+</div>
+
+<div v-click>
+
+<MapComplexity />
+
+</div>
+
+
+<style>
+div{
+  font-size: 15px;
+}
+
+#setdesc{
+  font-size: 13px;
+}
+</style>
+
+
+---
+layout: two-cols
+layoutClass: gap-16
+---
+
+# Classe
+
+<br>
+
+Une classe est le support de l'encapsulation : c'est un ensemble de données et de fonctions regroupées dans une même
+entité. Une classe est une description abstraite d'un objet. Les fonctions qui opèrent sur les données sont appelées des
+méthodes.<br>
+
+Une classe en Java est composée de :
+
+<ul>
+</ul>
+
+<li><b>Des attributs (ou champs)</b> : ce sont les variables qui définissent les propriétés de l'objet.</li>
+<li><b>Des constructeurs</b> : ce sont des méthodes spéciales qui sont appelées lors de la création d'un objet pour initialiser ses attributs.</li>
+<li><b>Des méthodes</b> : ce sont les fonctions qui définissent les actions que l'objet peut effectuer.</li>
+
+<br>
+
+::right::
+<br>
+<br>
+
+<div v-click>
+
+```java {all|5|7|7-8|10|all}  
+
+ modificateurs class nom_de_classe [extends classe_mere] [implements interfaces] { ... }
+
+ public  class  Humain {    
+
+    private String name;    
+
+    // Principe d'injection de dépendances
+    public Humain(String name) {
+        this.name = name;        
+    }
+
+
+    // Accesseur
+    public String getName() {
+          return name;
+      }
+
+    public void setName(String name) {
+        this.name = name;
+    }    
+
+    // Méthode
+    public void manger(){
+    }
+ }
+```
+
+<br>
+</div>
+
+
+<style>
+div{
+  font-size: 17px;
+}
+
+</style>
+
+
+---
+layout: two-cols
+layoutClass: gap-16
+---
+
+# Classe Abstraite
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+c'est une classe comportant au moins une de ses méthodes étant déclarée abstraite. Il est possible de définir une classe abstraite sans méthodes abstraites.<br>
+
+::right::
+<br>
+<br>
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+
+<div v-click>
+
+```java {all|5|7|7-8|10|all}  
+
+  public abstract class ComportementHumain {
+
+        public abstract void parler();
+
+        public void dormir() {
+            System.out.println("Dormir");
+        }
+        
+    }
+```
+
+<br>
+</div>
+
+
+<style>
+div{
+  font-size: 15px;
+}
+
+</style>
 ---
 layout: center
 class: text-center
@@ -429,15 +610,3 @@ enum Genre {
 }
 
 ```
-
-#
----
-layout: center
-class: text-center
----
-
-# Learn More
-
-[Documentation](https://sli.dev) · [GitHub](https://github.com/slidevjs/slidev) · [Showcases](https://sli.dev/resources/showcases)
-
-<PoweredBySlidev mt-10 />
