@@ -235,15 +235,10 @@ Les fonctionnalités de base de ce type de collection sont définies dans l'inte
 <br> 
 
 <div v-click>
-
 <h4> Les collections de type Set </h4>
 
-<br> 
-
-<div id="setdesc">
 Une collection de type Set est un ensemble, qui ne permet pas l'ajout de doublons ni l'accès direct à un élément de la collection.<br>
 Les fonctionnalités de base de ce type de collection sont définies dans l'interface <b>java.util.Set</b>.
-</div>
 </div>
 
 <br>
@@ -251,9 +246,9 @@ Les fonctionnalités de base de ce type de collection sont définies dans l'inte
 <div v-click>
 
 ```java {all|5|7|7-8|10|all}  
-  Set<String> monEnsemble = new HashSet<>(); (Ne garantit pas l ordre de parcours)
-  Set<Integer> monEnsemble = new LinkedHashSet<>(); (Garantit pas l ordre de parcours)
-  Set<Integer> monEnsembleOrdonne = new TreeSet<>(); (Trie selon un comparateur)
+  Set<String> monEnsemble = new HashSet<>();
+  Set<Integer> monEnsemble = new LinkedHashSet<>();
+  Set<Integer> monEnsembleOrdonne = new TreeSet<>();
 ```
 
 <br>
@@ -261,20 +256,11 @@ Les fonctionnalités de base de ce type de collection sont définies dans l'inte
 
 <div v-click>
 
-<SetComplexity />
+<ListComplexity />
 
 </div>
 
 
-<style>
-div{
-  font-size: 15px;
-}
-
-#setdesc{
-  font-size: 13px;
-}
-</style>
 <!-- ArrayList elle utilise un tableau dont la taille s'adapte automatiquement au nombre d'éléments de la collection. Cette adaptation a cependant un coût car elle nécessite l'instanciation d'un nouveau tableau et la copie des éléments dans ce nouveau tableau. -->
 
 <!--
@@ -301,7 +287,6 @@ méthodes sont utilisées lors de l'ajout d'un élément pour déterminer s'il e
 TreeSet il est impossible d'ajouter un élément null
 
 -->
-
 
 ---
 layout: center
@@ -387,7 +372,6 @@ class: text-center
 
 # Interface
 <div>
-
 Une interface est un ensemble de constantes et de déclarations de méthodes correspondant un peu à une classe abstraite. C'est une sorte de standard auquel une classe peut répondre. Tous les objets qui se conforment à cette interface (qui implémentent cette interface) possèdent les méthodes et les constantes déclarées dans celle-ci. Plusieurs interfaces peuvent être implémentées dans une même classe.
 </div>
 ::right::
@@ -396,46 +380,64 @@ Une interface est un ensemble de constantes et de déclarations de méthodes cor
 
 <<< @/snippets/classe.java#snippet
 
----
-layout: image-right
-image: https://cover.sli.dev
----
-
-# Interface
-
-```java {all|5|7|7-8|10|all}  
-
-public interface MonInterface {
-
-     public void manger();                
-}
 
 
-
-public interface MonInterface2 {
-
-     public void sereveiller();          
-
-      default void dormir() {
-          System.out.println("Dormir");
-      }
-}
-```
 
 
 ---
 layout: image-right
 image: https://cover.sli.dev
+class: text-center
 ---
 
 # Notion d'implémentation
-<<< @/snippets/classe.java#snippet
+
+```java {all|5|7|7-8|10|all} 
+interface AfficheType {
+    void afficherType();
+}
+
+class Personne implements AfficheType {
+  public void afficherType() {
+    System.out.println(" Je suis une personne ");
+  }
+
+}
+
+class Voiture implements AfficheType {
+  public void afficherType() {
+    System.out.println(" Je suis une voiture ");
+  }
+}
+
+```
 
 ---
 layout: image-right
 image: https://cover.sli.dev
+class: text-center
 ---
 
 # Enumération
-<<< @/snippets/classe.java#snippet
+<div>
+Un enum (énumération) est utilisé pour définir un ensemble fixe de valeurs nommées.
+</div>
+```java {all|5|7|7-8|10|all}
+enum Genre {
+    HOMME,
+    FEMME
+}
 
+```
+
+#
+---
+layout: center
+class: text-center
+---
+
+# Learn More
+
+[Documentation](https://sli.dev) · [GitHub](https://github.com/slidevjs/slidev) · [Showcases](https://sli.dev/resources/showcases)
+
+<PoweredBySlidev mt-10 />
