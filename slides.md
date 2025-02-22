@@ -288,19 +288,21 @@ TreeSet il est impossible d'ajouter un élément null
 
 -->
 
-=======
+---
+layout: two-cols
+layoutClass: gap-16
+---
+
 # Notion d'Héritage
-
-
 
 <<< @/snippets/ClassMere.java#snippet
 
+::right::
 <<< @/snippets/ClassFille.java#snippet
 
-
-this part of test
-
-
+---
+layout: two-cols
+layoutClass: gap-16
 ---
 
 # Interface
