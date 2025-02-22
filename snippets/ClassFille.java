@@ -1,3 +1,5 @@
+// #region snippet
+
 public class ClassFille extends ClassMere {
     private String ecole;
 
@@ -15,3 +17,5 @@ public class ClassFille extends ClassMere {
     }
 
 }
+
+// #endregion snippet

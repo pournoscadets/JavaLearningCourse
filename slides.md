@@ -288,11 +288,32 @@ TreeSet il est impossible d'ajouter un élément null
 
 -->
 
+=======
+# Notion d'Héritage
+
+
+
+<<< @/snippets/ClassMere.java#snippet
+
+<<< @/snippets/ClassFille.java#snippet
+
+
+this part of test
 
 
 ---
-level: 2
----
+
+# Interface
+<<< @/snippets/classe.java#snippet
+
+
+# Notion d'implémentation
+<<< @/snippets/classe.java#snippet
+
+
+# Enumération
+<<< @/snippets/classe.java#snippet
+
 
 # Shiki Magic Move
 

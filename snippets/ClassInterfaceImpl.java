@@ -1,3 +1,5 @@
+// #region snippet
+
 public class ClassInterfaceImpl implements ClassInterface {
 
     public ClassInterfaceImpl() {
@@ -14,3 +16,5 @@ public class ClassInterfaceImpl implements ClassInterface {
         return "Heure: 12:00";
     }
 }
+
+// #endregion snippet

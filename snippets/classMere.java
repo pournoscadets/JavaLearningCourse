@@ -1,3 +1,5 @@
+// #region snippet
+
 public class ClassMere {
 
     private String nom;
@@ -29,6 +31,6 @@ public class ClassMere {
     public void setPrenom(String prenom) {
         this.prenom = prenom;
     }
-
-
 }
+
+// #endregion snippet
